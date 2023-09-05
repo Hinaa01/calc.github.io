@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>calculator</title>
+
+<style>
+
+body {
+    margin:0px;
+    padding:0px;
+}
+
+#bgdiv {
+    width:100%;
+}
+
+#calcbody {
+    width:350px;
+    height:550px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-image: linear-gradient(to right,#292929,#333030,#292929);
+    margin:auto;
+    box-shadow: inset 0px 0px 15px 15px #232121, 0px -2px 0px 2px #6b6b64, 0px 2px 0px 2px #0a0808;
+    margin-top:70px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+#inputfield {
+     width:75%;
+     height:60px;
+     background-color: #9d9d90;
+     box-sizing: border-box;
+     border:1px solid black;
+     box-shadow: 0px -2px 0px #161314, 0px 2px 0px #727272, inset 0px 5px 5px #6b6b64;
+     border-bottom-color:#575757;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+     
+}
+
+.buttons {
+     width:80%;
+     height:60px;
+     box-sizing: border-box;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     
+}
+
+.insidebutton {
+    width:20%;
+    height:50px;
+    box-sizing: border-box;
+    background-image: linear-gradient(to bottom,#292929,#333030,#292929);
+    border:1px solid black;
+    border-top-color: #727272;
+    box-shadow: 0px 0px 10px #161314;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;   
+    display: inline-block;
+    color:white;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 17px;
+}
+
+
+.insidebutton:active {
+    box-shadow: inset 0px 0px 10px #161314;
+
+}
+
+#inputfieldcalc {
+    background-color: transparent;
+    padding:5px;
+    width:95%;
+    margin-top:15px;
+    font-family:'orbitron';
+    font-weight: 600;
+    font-size: 25px;
+    text-align:right;
+    border:none;
+    color:#474741;
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Roboto 700/900 & orbitron 500/600-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap" rel="stylesheet"> 
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600&display=swap" rel="stylesheet"> 
+
+
+
+</head>
+
+<body>
+
+<div id="bgdiv">
+
+
+<div id="calcbody">
+
+    <div id="inputfield">
+        <input type="text" id="inputfieldcalc" placeholder="0"/>
+    </div>
+
+    <div class="buttons">
+
+    <button class="insidebutton number" onclick="show('1')">1</button>
+    <button class="insidebutton number" onclick="show('2')">2</button>
+    <button class="insidebutton number" onclick="show('3')">3</button>
+    <button class="insidebutton" id="add-button" onclick="show('+')">+</button>
+
+    </div>
+
+    <div class="buttons">
+
+    <button class="insidebutton number" onclick="show('4')">4</button>
+    <button class="insidebutton number" onclick="show('5')">5</button>
+    <button class="insidebutton number" onclick="show('6')">6</button>
+    <button class="insidebutton" id="subtract-button" onclick="show('-')">-</button>
+
+    </div>
+
+    <div class="buttons">
+
+    <button class="insidebutton number" onclick="show('7')">7</button>
+    <button class="insidebutton number" onclick="show('8')">8</button>
+    <button class="insidebutton number" onclick="show('9')">9</button>
+    <button class="insidebutton" id="divide-button" onclick="show('/')">/</button>
+
+    </div>
+
+    <div class="buttons">
+
+    <button class="insidebutton number" onclick="show('+')">0</button>
+    <button class="insidebutton" id="multiply-button" onclick="show('*')">*</button>
+    <button class="insidebutton" id="delete-button" onclick="ac()">cc</button>
+    <button class="insidebutton" id="equal-button" onclick="cal()">=</button>
+
+    </div>
+
+</div>
+
+
+
+</div>  
+
+
+
+
+
+<script>
+
+    
+
+function show(input) {
+    document.getElementById('inputfieldcalc').value+= input;
+}
+
+function ac() {
+    document.getElementById('inputfieldcalc').value= "";
+}
+
+function cal() {
+
+    let calcVal = eval(document.getElementById('inputfieldcalc').value);
+
+    document.getElementById('inputfieldcalc').value = calcVal;
+    
+}
+
+
+    
+</script>
+    
+
+
+
+</body>
+
+
+</html>
